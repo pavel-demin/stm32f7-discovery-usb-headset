@@ -64,7 +64,7 @@ CFLAGS = \
   -IDrivers/STM32F7xx_HAL_Driver/Inc \
   -IMiddlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Inc \
   -IMiddlewares/ST/STM32_USB_Device_Library/Core/Inc \
-  -IInc \
+  -IInc
 
 LDFLAGS = \
   -mthumb -mcpu=cortex-m7 -mfpu=fpv5-sp-d16 -mfloat-abi=hard \
