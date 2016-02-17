@@ -51,7 +51,7 @@
   */ 
 #define AUDIO_OUT_EP                                  0x01
 #define AUDIO_IN_EP                                   0x82
-#define USB_AUDIO_CONFIG_DESC_SIZE                    192
+#define USB_AUDIO_CONFIG_DESC_SIZE                    188
 #define USB_AUDIO_DESC_SIZ                            0x09
 
 #define AUDIO_DESCRIPTOR_TYPE                         0x21
