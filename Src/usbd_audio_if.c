@@ -65,6 +65,7 @@ USBD_AUDIO_ItfTypeDef USBD_AUDIO_fops = {
 static int8_t Audio_Init(uint32_t  AudioFreq, uint32_t Volume, uint32_t options)
 {
   BSP_AUDIO_OUT_Init(OUTPUT_DEVICE_AUTO, Volume, AudioFreq);
+  BSP_AUDIO_IN_Init(OUTPUT_DEVICE_AUTO, Volume, AudioFreq);
   
   /* Update the Audio frame slot configuration to match the PCM standard instead of TDM */
   BSP_AUDIO_OUT_SetAudioFrameSlot(CODEC_AUDIOFRAME_SLOT_02);
@@ -80,6 +81,7 @@ static int8_t Audio_Init(uint32_t  AudioFreq, uint32_t Volume, uint32_t options)
 static int8_t Audio_DeInit(uint32_t options)
 {
   BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW);
+  BSP_AUDIO_IN_Stop(CODEC_PDWN_SW);
   return 0;
 }
 
