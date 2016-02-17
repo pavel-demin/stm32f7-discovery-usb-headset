@@ -50,11 +50,9 @@
   * @{
   */ 
 #define AUDIO_OUT_EP                                  0x01
-#define USB_AUDIO_CONFIG_DESC_SIZ                     109
-#define AUDIO_INTERFACE_DESC_SIZE                     9
+#define AUDIO_IN_EP                                   0x82
+#define USB_AUDIO_CONFIG_DESC_SIZE                    192
 #define USB_AUDIO_DESC_SIZ                            0x09
-#define AUDIO_STANDARD_ENDPOINT_DESC_SIZE             0x09
-#define AUDIO_STREAMING_ENDPOINT_DESC_SIZE            0x07
 
 #define AUDIO_DESCRIPTOR_TYPE                         0x21
 #define USB_DEVICE_CLASS_AUDIO                        0x01
@@ -73,10 +71,6 @@
 #define AUDIO_CONTROL_INPUT_TERMINAL                  0x02
 #define AUDIO_CONTROL_OUTPUT_TERMINAL                 0x03
 #define AUDIO_CONTROL_FEATURE_UNIT                    0x06
-
-#define AUDIO_INPUT_TERMINAL_DESC_SIZE                0x0C
-#define AUDIO_OUTPUT_TERMINAL_DESC_SIZE               0x09
-#define AUDIO_STREAMING_INTERFACE_DESC_SIZE           0x07
 
 #define AUDIO_CONTROL_MUTE                            0x0001
 
