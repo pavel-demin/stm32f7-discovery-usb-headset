@@ -38,13 +38,14 @@ OBJECTS = \
   startup_stm32f746xx.o \
   syscalls.o
 
-SOURCES += Drivers/BSP/Components/wm8994
-SOURCES += Drivers/BSP/STM32746G-Discovery
-SOURCES += Drivers/CMSIS/Device/ST/STM32F7xx/Source
-SOURCES += Drivers/STM32F7xx_HAL_Driver/Src
-SOURCES += Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Src
-SOURCES += Middlewares/ST/STM32_USB_Device_Library/Core/Src
-SOURCES += Src
+SOURCES = \
+  Drivers/BSP/Components/wm8994 \
+  Drivers/BSP/STM32746G-Discovery \
+  Drivers/CMSIS/Device/ST/STM32F7xx/Source \
+  Drivers/STM32F7xx_HAL_Driver/Src \
+  Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Src \
+  Middlewares/ST/STM32_USB_Device_Library/Core/Src \
+  Src
 
 vpath %.c $(SOURCES)
 
@@ -52,20 +53,24 @@ CC = arm-none-eabi-gcc
 LD = arm-none-eabi-gcc
 OBJCOPY = arm-none-eabi-objcopy
 
-CFLAGS = -Wall -O2 -mthumb -mcpu=cortex-m7 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -fdata-sections -ffunction-sections -ffast-math
-CFLAGS += -DUSE_HAL_DRIVER -DUSE_USB_FS -DUSE_IOEXPANDER
-CFLAGS += -DSTM32F746xx -DUSE_STM32746G_DISCO
-CFLAGS += -IDrivers/BSP/STM32746G-Discovery
-CFLAGS += -IDrivers/CMSIS/Device/ST/STM32F7xx/Include
-CFLAGS += -IDrivers/CMSIS/Include
-CFLAGS += -IDrivers/STM32F7xx_HAL_Driver/Inc
-CFLAGS += -IMiddlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Inc
-CFLAGS += -IMiddlewares/ST/STM32_USB_Device_Library/Core/Inc
-CFLAGS += -IInc
+CFLAGS = \
+  -Wall -O2 -mthumb -mcpu=cortex-m7 -mfpu=fpv5-sp-d16 -mfloat-abi=hard \
+  -fdata-sections -ffunction-sections -ffast-math \
+  -DUSE_HAL_DRIVER -DUSE_USB_FS -DUSE_IOEXPANDER \
+  -DSTM32F746xx -DUSE_STM32746G_DISCO \
+  -IDrivers/BSP/STM32746G-Discovery \
+  -IDrivers/CMSIS/Device/ST/STM32F7xx/Include \
+  -IDrivers/CMSIS/Include \
+  -IDrivers/STM32F7xx_HAL_Driver/Inc \
+  -IMiddlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Inc \
+  -IMiddlewares/ST/STM32_USB_Device_Library/Core/Inc \
+  -IInc \
 
-LDFLAGS = -mthumb -mcpu=cortex-m7 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -fdata-sections -ffunction-sections -ffast-math
-LDFLAGS += -specs=nano.specs -Wl,-T,STM32F746NGHx_FLASH.ld -Wl,--gc-sections
-LDFLAGS += -lc -lm -lnosys
+LDFLAGS = \
+  -mthumb -mcpu=cortex-m7 -mfpu=fpv5-sp-d16 -mfloat-abi=hard \
+  -fdata-sections -ffunction-sections -ffast-math \
+  -specs=nano.specs -Wl,-T,STM32F746NGHx_FLASH.ld -Wl,--gc-sections \
+  -lc -lm -lnosys
 
 all: $(TARGET).bin
 
